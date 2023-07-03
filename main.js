@@ -1,4 +1,5 @@
 import "./style.css";
+import Split from "split-grid";
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -29,12 +30,26 @@ const createHtml = () => {
         <style>
             ${css}
         </style>
-        <script>
-            ${js} 
-        </script>  
     </head>
     <body>
         ${html}
     </body>
+    <script>
+        ${js} 
+    </script>  
   `;
 };
+Split({
+  columnGutters: [
+    {
+      track: 1,
+      element: document.querySelector(".vertical-gutter"),
+    },
+  ],
+  rowGutters: [
+    {
+      track: 1,
+      element: document.querySelector(".horizontal-gutter"),
+    },
+  ],
+});

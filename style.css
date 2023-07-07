@@ -33,33 +33,15 @@ iframe {
   background: white;
 }
 
-textarea {
-  background-color: #333;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  color: #fff;
-  font-family: "Roboto Mono", monospace;
-  padding: 24px;
-  resize: none;
-  box-shadow: 0 0 0 0.1px rgba(255, 255, 255, 0.3);
-  background-repeat: no-repeat;
-  background-size: 36px;
-  background-position: calc(100% - 16px) calc(100% - 16px);
-}
-
-textarea:focus {
-  outline: none;
-}
-#js {
+#js::after {
   background-image: url("/public/js.svg");
 }
 
-#html {
+#html::after {
   background-image: url("/public/html.svg");
 }
 
-#css {
+#css::after {
   background-image: url("/public/css.svg");
 }
 
@@ -80,4 +62,20 @@ textarea:focus {
   cursor: row-resize;
   grid-area: 2 / 1 / 2 / 4;
   background-color: #fff;
+}
+
+.editor {
+  position: relative;
+  overflow: hidden;
+}
+
+.editor::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
 }
